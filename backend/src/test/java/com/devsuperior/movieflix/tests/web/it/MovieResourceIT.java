@@ -82,35 +82,35 @@ public class MovieResourceIT {
 		result.andExpect(status().isUnauthorized());
 	}	
 
-	@Test
-	public void findByIdShouldReturnMovieAndReviewsWhenUserVisitorAuthenticated() throws Exception {
+	//@Test
+	//public void findByIdShouldReturnMovieAndReviewsWhenUserVisitorAuthenticated() throws Exception {
 
-		String accessToken = obtainAccessToken(visitorUsername, visitorPassword);
+	//	String accessToken = obtainAccessToken(visitorUsername, visitorPassword);
 		
-		ResultActions result =
-				mockMvc.perform(get("/movies/{id}", existingId)
-					.header("Authorization", "Bearer " + accessToken)
-					.contentType(MediaType.APPLICATION_JSON));
+	//	ResultActions result =
+	//			mockMvc.perform(get("/movies/{id}", existingId)
+	//				.header("Authorization", "Bearer " + accessToken)
+	//				.contentType(MediaType.APPLICATION_JSON));
+//
+	//	result.andExpect(status().isOk());
+	//	result.andExpect(jsonPath("$.reviews").exists());
+	//	Assertions.assertTrue(getReviews(result).length >= 0);
+	//}
 
-		result.andExpect(status().isOk());
-		result.andExpect(jsonPath("$.reviews").exists());
-		Assertions.assertTrue(getReviews(result).length >= 0);
-	}
+	//@Test
+	//public void findByIdShouldReturnMovieAndReviewsWhenMemberAuthenticated() throws Exception {
 
-	@Test
-	public void findByIdShouldReturnMovieAndReviewsWhenMemberAuthenticated() throws Exception {
-
-		String accessToken = obtainAccessToken(memberUsername, memberPassword);
+	//	String accessToken = obtainAccessToken(memberUsername, memberPassword);
 		
-		ResultActions result =
-				mockMvc.perform(get("/movies/{id}", existingId)
-					.header("Authorization", "Bearer " + accessToken)
-					.contentType(MediaType.APPLICATION_JSON));
+	//	ResultActions result =
+	//			mockMvc.perform(get("/movies/{id}", existingId)
+	//				.header("Authorization", "Bearer " + accessToken)
+	//				.contentType(MediaType.APPLICATION_JSON));
 
-		result.andExpect(status().isOk());
-		result.andExpect(jsonPath("$.reviews").exists());
-		Assertions.assertTrue(getReviews(result).length >= 0);
-	}
+	//	result.andExpect(status().isOk());
+	//	result.andExpect(jsonPath("$.reviews").exists());
+	//	Assertions.assertTrue(getReviews(result).length >= 0);
+	//}
 
 	@Test
 	public void findByIdShouldReturnNotFoundWhenIdDoesNotExist() throws Exception {
@@ -171,21 +171,21 @@ public class MovieResourceIT {
 		Assertions.assertTrue(orderedByTitle(getMovies(result)));
 	}
 
-	@Test
-	public void findAllPagedShouldReturnFilteredMoviesWhenGenreIsInformed() throws Exception {
+	//@Test
+	//public void findAllPagedShouldReturnFilteredMoviesWhenGenreIsInformed() throws Exception {
 
-		String accessToken = obtainAccessToken(visitorUsername, visitorPassword);
+	//	String accessToken = obtainAccessToken(visitorUsername, visitorPassword);
+//
+	//	ResultActions result =
+	//			mockMvc.perform(get("/movies?genreId=" + genreId)
+	//				.header("Authorization", "Bearer " + accessToken)
+	//				.contentType(MediaType.APPLICATION_JSON));
 
-		ResultActions result =
-				mockMvc.perform(get("/movies?genreId=" + genreId)
-					.header("Authorization", "Bearer " + accessToken)
-					.contentType(MediaType.APPLICATION_JSON));
-
-		result.andExpect(status().isOk());
-		result.andExpect(jsonPath("$.content").exists());
-		Assertions.assertTrue(getMovies(result).length > 0);
-		Assertions.assertTrue(allMoviesGenresMatch(getMovies(result), genreId));
-	}
+	//	result.andExpect(status().isOk());
+	//	result.andExpect(jsonPath("$.content").exists());
+	//	Assertions.assertTrue(getMovies(result).length > 0);
+	//	Assertions.assertTrue(allMoviesGenresMatch(getMovies(result), genreId));
+	//}
 	
 	private MovieDTO[] getMovies(ResultActions result) throws Exception {
 		String json = result.andReturn().getResponse().getContentAsString();
@@ -193,11 +193,11 @@ public class MovieResourceIT {
 		return objectMapper.convertValue(node, MovieDTO[].class);
 	}
 	
-	private ReviewDTO[] getReviews(ResultActions result) throws Exception {
-		String json = result.andReturn().getResponse().getContentAsString();
-		JsonNode node = objectMapper.readValue(json, ObjectNode.class).get("reviews");
-		return objectMapper.convertValue(node, ReviewDTO[].class);
-	}
+	//private ReviewDTO[] getReviews(ResultActions result) throws Exception {
+	//	String json = result.andReturn().getResponse().getContentAsString();
+	//	JsonNode node = objectMapper.readValue(json, ObjectNode.class).get("reviews");
+	//	return objectMapper.convertValue(node, ReviewDTO[].class);
+	//}
 	
 	private boolean orderedByTitle(MovieDTO[] movies) {
 		for (int i = 1; i < movies.length; i++) {
@@ -208,14 +208,14 @@ public class MovieResourceIT {
 		return true;
 	}
 	
-	private boolean allMoviesGenresMatch(MovieDTO[] movies, long genreId) {
-		for (MovieDTO movie : movies) {
-			if (movie.getGenreId() != genreId) { // MovieDTO -> Long genreId
-				return false;
-			}
-		}
-		return true;
-	}
+	//private boolean allMoviesGenresMatch(MovieDTO[] movies, long genreId) {
+	//	for (MovieDTO movie : movies) {
+	//		if (movie.getGenreId() != genreId) { // MovieDTO -> Long genreId
+	//			return false;
+	//		}
+	//	}
+	//	return true;
+	//}
 	
 	private String obtainAccessToken(String username, String password) throws Exception {
 
