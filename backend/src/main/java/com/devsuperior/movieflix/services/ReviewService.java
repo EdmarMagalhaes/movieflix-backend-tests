@@ -1,57 +1,57 @@
 package com.devsuperior.movieflix.services;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import javax.persistence.EntityNotFoundException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.devsuperior.movieflix.dto.MovieDTO;
-import com.devsuperior.movieflix.entities.Movie;
-import com.devsuperior.movieflix.repositories.MovieRepository;
+import com.devsuperior.movieflix.dto.ReviewDTO;
+import com.devsuperior.movieflix.entities.Review;
+import com.devsuperior.movieflix.repositories.ReviewRepository;
 import com.devsuperior.movieflix.services.exceptions.DataBaseException;
 import com.devsuperior.movieflix.services.exceptions.ResourceNotFoundException;
 
 @Service
-public class MovieService {
-	
+public class ReviewService {
+
 	@Autowired
-	private MovieRepository repository;
+	private ReviewRepository repository;
 	
 	@Transactional(readOnly = true)
-	public Page<MovieDTO> findAllPaged(PageRequest pageRequest) {
-		Page<Movie> list = repository.findAll(pageRequest);
-		return list.map(x -> new MovieDTO(x));
+	public List<ReviewDTO> findAll() {
+		List<Review> list = repository.findAll();
+		return list.stream().map(x -> new ReviewDTO(x)).collect(Collectors.toList());
 	}
 
 	@Transactional(readOnly = true)
-	public MovieDTO findById(Long id) {
-		Optional<Movie> obj = repository.findById(id);
-		Movie entity = obj.orElseThrow(() -> new ResourceNotFoundException("Entity not found"));
-		return new MovieDTO(entity, entity.getReviews());
+	public ReviewDTO findById(Long id) {
+		Optional<Review> obj = repository.findById(id);
+		Review entity = obj.orElseThrow(() -> new ResourceNotFoundException("Entity not found"));
+		return new ReviewDTO(entity);
 	}
 	
-		@Transactional
-	public MovieDTO insert(MovieDTO dto) {
-		Movie entity = new Movie();
-		//entity.setName(dto.getName());
+	@Transactional
+	public ReviewDTO insert(ReviewDTO dto) {
+		Review entity = new Review();
+		entity.setText(dto.getText());
 		entity = repository.save(entity);
-		return new MovieDTO(entity);
+		return new ReviewDTO(entity);
 	}
 
 	@Transactional
-	public MovieDTO update(Long id,MovieDTO dto) {
+	public ReviewDTO update(Long id, ReviewDTO dto) {
 		try {
-		Movie entity = repository.getOne(id);
-		//entity.setName(dto.getName());
+		Review entity = repository.getOne(id);
+		entity.setText(dto.getText());
 		entity = repository.save(entity);
-		return new MovieDTO(entity);
+		return new ReviewDTO(entity);
 		}
 		catch (EntityNotFoundException e) {
 			throw new ResourceNotFoundException("Id not found " + id);
@@ -70,5 +70,4 @@ public class MovieService {
 			throw new DataBaseException("Integrity violation");
 		}
 	}
-	
 }
