@@ -27,7 +27,7 @@ public class Genre implements Serializable {
 	public Genre() {
 	}
 
-	public Genre(Long id, String name, List<Movie> movies) {
+	public Genre(Long id, String name) {
 		super();
 		this.id = id;
 		this.name = name;

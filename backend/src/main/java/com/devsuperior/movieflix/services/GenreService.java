@@ -34,7 +34,7 @@ public class GenreService {
 	public GenreDTO findById(Long id) {
 		Optional<Genre> obj = repository.findById(id);
 		Genre entity = obj.orElseThrow(() -> new ResourceNotFoundException("Entity not found"));
-		return new GenreDTO(entity, entity.getMovies());
+		return new GenreDTO(entity);
 	}
 	
 	@Transactional

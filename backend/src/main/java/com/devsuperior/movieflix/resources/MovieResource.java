@@ -30,6 +30,7 @@ public class MovieResource {
 	
 	@GetMapping
 	public ResponseEntity<Page<MovieDTO>> findAll(
+			@RequestParam(value = "genreId", defaultValue = "0") Long genreId,
 			@RequestParam(value = "page", defaultValue = "0") Integer page,
 			@RequestParam(value = "linesPerPage", defaultValue = "5") Integer linesPerPage,
 			@RequestParam(value = "direction", defaultValue = "ASC") String direction,
@@ -38,7 +39,7 @@ public class MovieResource {
 		
 		PageRequest pageRequest = PageRequest.of(page, linesPerPage, Direction.valueOf(direction), orderBy); 
 		
-		Page<MovieDTO> list = service.findAllPaged(pageRequest);
+		Page<MovieDTO> list = service.findAllPaged(genreId, pageRequest);
 		
 		return ResponseEntity.ok().body(list);
 		
@@ -51,23 +52,4 @@ public class MovieResource {
 		
 	}
 
-	@PostMapping
-	public ResponseEntity<MovieDTO> insert(@RequestBody MovieDTO dto){
-		dto = service.insert(dto);
-		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
-				.buildAndExpand(dto.getId()).toUri();
-		return ResponseEntity.created(uri).body(dto);
-	}
-	
-	@PutMapping(value = "/{id}")
-	public ResponseEntity<MovieDTO> update(@PathVariable Long id, @RequestBody MovieDTO dto){
-		dto = service.update(id, dto);
-		return ResponseEntity.ok().body(dto);
-	}
-	
-	@DeleteMapping(value = "/{id}")
-	public ResponseEntity<Void> delete(@PathVariable Long id){
-		service.delete(id);
-		return ResponseEntity.noContent().build();
-	}
 }

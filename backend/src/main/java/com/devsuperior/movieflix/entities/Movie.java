@@ -41,7 +41,7 @@ public class Movie implements Serializable {
 	}
 
 	public Movie(Long id, String title, String subTitle, Integer year, String imgUri, String synopsis,
-			Genre genre, List<Review> reviews) {
+			Genre genre) {
 		super();
 		this.id = id;
 		this.title = title;

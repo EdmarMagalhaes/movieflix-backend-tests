@@ -21,8 +21,8 @@ public class ReviewDTO {
 	}
 	
 	public ReviewDTO(Review entity) {
-		this.id = entity.getId();
-		this.text = entity.getText();
+		id = entity.getId();
+		text = entity.getText();
 	}
 	
 	public Long getId() {
