@@ -37,5 +37,3 @@ public class OAuthCustomError implements Serializable{
 		this.errorDescription = errorDescription;
 	}
 }
-
-

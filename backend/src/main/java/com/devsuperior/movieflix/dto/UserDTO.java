@@ -14,8 +14,6 @@ public class UserDTO implements Serializable {
 	private String email;
 	private String password;
 	
-	private List<ReviewDTO> reviews = new ArrayList<>();
-	
 	public UserDTO() {
 	}
 
@@ -26,7 +24,7 @@ public class UserDTO implements Serializable {
 		this.password = password;
 	}
 
-	public UserDTO (User entity) {
+	public UserDTO(User entity) {
 		id = entity.getId();
 		name = entity.getName();
 		email = entity.getEmail();
@@ -70,13 +68,5 @@ public class UserDTO implements Serializable {
 		return serialVersionUID;
 	}
 
-	public List<ReviewDTO> getReviews() {
-		return reviews;
-	}
-
-	public void setReviews(List<ReviewDTO> reviews) {
-		this.reviews = reviews;
-	}
-	
 	
 }

@@ -32,30 +32,4 @@ public class GenreResource {
 		
 	}
 	
-	@GetMapping(value = "/{id}")
-	public ResponseEntity<GenreDTO> findById(@PathVariable Long id) {
-		GenreDTO dto = service.findById(id);	
-		return ResponseEntity.ok().body(dto);
-		
-	}
-
-	@PostMapping
-	public ResponseEntity<GenreDTO> insert(@RequestBody GenreDTO dto){
-		dto = service.insert(dto);
-		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
-				.buildAndExpand(dto.getId()).toUri();
-		return ResponseEntity.created(uri).body(dto);
-	}
-	
-	@PutMapping(value = "/{id}")
-	public ResponseEntity<GenreDTO> update(@PathVariable Long id, @RequestBody GenreDTO dto){
-		dto = service.update(id, dto);
-		return ResponseEntity.ok().body(dto);
-	}
-	
-	@DeleteMapping(value = "/{id}")
-	public ResponseEntity<Void> delete(@PathVariable Long id){
-		service.delete(id);
-		return ResponseEntity.noContent().build();
-	}
 }

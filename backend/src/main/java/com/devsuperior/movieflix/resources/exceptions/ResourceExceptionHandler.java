@@ -16,6 +16,8 @@ import com.devsuperior.movieflix.services.exceptions.ForbiddenException;
 import com.devsuperior.movieflix.services.exceptions.ResourceNotFoundException;
 import com.devsuperior.movieflix.services.exceptions.UnauthorizedException;
 
+
+
 @ControllerAdvice
 public class ResourceExceptionHandler {
 	@ExceptionHandler(ResourceNotFoundException.class)
@@ -26,7 +28,7 @@ public class ResourceExceptionHandler {
 				"Resource not found", 
 				e.getMessage(),
 				request.getRequestURI());
-		return ResponseEntity.status(status).body(err);
+return ResponseEntity.status(status).body(err);
 	
 	}
 	
@@ -70,6 +72,4 @@ public class ResourceExceptionHandler {
 			OAuthCustomError err = new OAuthCustomError("Unauthorized", e.getMessage());
 		return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(err);
 	}
-
 }
-
