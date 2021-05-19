@@ -1,6 +1,6 @@
 # MovieFilix
 
-[![NPM](https://img.shields.io/npm/l/react)](https://github.com/EdmarMagalhaes/dsdeliver-sds2/blob/main/LICENSE) 
+[![NPM](https://img.shields.io/npm/l/react)](https://github.com/EdmarMagalhaes/movieflix-backend-tests/blob/main/LICENSE) 
 
 # Sobre o projeto
 
