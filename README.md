@@ -40,7 +40,7 @@ Pré-requisitos: Java 11
 
 ```bash
 # clonar repositório
-git clone https://github.com/EdmarMagalhaes/dsdeliver-sds2.git
+git clone https://github.com/EdmarMagalhaes/movieflix-backend-tests.git
 
 # entrar na pasta do projeto back end
 cd backend
