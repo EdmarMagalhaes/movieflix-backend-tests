@@ -67,6 +67,7 @@ yarn start
 ```
 ## Layout mobile
 ![Mobile 1](https://github.com/EdmarMagalhaes/movieflix-backend-tests/blob/main/assets/MobileLogin.jpg) 
+
 ![Mobile 5](https://github.com/EdmarMagalhaes/movieflix-backend-tests/blob/main/assets/MobileDetalhes.jpg)
 
 ## Layout web
