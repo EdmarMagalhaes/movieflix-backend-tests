@@ -70,13 +70,11 @@ yarn start
 ![Mobile 5](https://github.com/EdmarMagalhaes/movieflix-backend-tests/blob/main/assets/MobileDetalhes.jpg)
 
 ## Layout web
-![Web 1](https://github.com/EdmarMagalhaes/dsdeliver-sds2/blob/main/assets/AppWebCapa.jpg)
+![Web 1](https://github.com/EdmarMagalhaes/movieflix-backend-tests/blob/main/assets/WebLogin.jpg)
 
-![Web 2](https://github.com/EdmarMagalhaes/dsdeliver-sds2/blob/main/assets/AppWebOrders.jpg)
+![Web 2](https://github.com/EdmarMagalhaes/movieflix-backend-tests/blob/main/assets/WebCatalogo.jpg)
 
-![Web 3](https://github.com/EdmarMagalhaes/dsdeliver-sds2/blob/main/assets/AppWebOrderMake.jpg)
-
-![Web 4](https://github.com/EdmarMagalhaes/dsdeliver-sds2/blob/main/assets/AppWebOrderSend.jpg)
+![Web 3](https://github.com/EdmarMagalhaes/movieflix-backend-tests/blob/main/assets/WebDetalhes.jpg)
 
 # Autor
 
