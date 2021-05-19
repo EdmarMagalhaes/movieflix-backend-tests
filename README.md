@@ -9,6 +9,7 @@ https://edmarsds2.netlify.app
 Projeto Desenvolvido durante o BootCamp DevSuperior, O projeto consiste em um sistema de apreço e avaliação de filmes, os usuários visitantes podem visualizar e apreciar as caracteristicas de todos os filmes, já usuários membros além disso podem também inserir avaliações para cada filme. Utilizamos Java com Spring Boot, e implantação no Heroku.
 (https://devsuperior.com "Site da DevSuperior").
 
+## Modelo conceitual
 ![Modelo Conceitual](https://github.com/EdmarMagalhaes/dsdeliver-sds2/blob/main/assets/modelo-conceitual.png)
 
 ## Padrão camadas adotado
@@ -76,7 +77,6 @@ yarn start
 
 ![Web 4](https://github.com/EdmarMagalhaes/dsdeliver-sds2/blob/main/assets/AppWebOrderSend.jpg)
 
-## Modelo conceitual
 # Autor
 
 Edmar Pires Magalhães Cavalcante
