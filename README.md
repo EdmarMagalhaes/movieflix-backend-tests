@@ -19,6 +19,8 @@ Projeto Desenvolvido durante o BootCamp DevSuperior, O projeto consiste em um si
 ## Back end
 - Java
 - Spring Boot
+- Spring Security
+- OAuth/JWT
 - JPA / Hibernate
 - Maven
 ## Front end
