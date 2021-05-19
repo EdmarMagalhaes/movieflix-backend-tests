@@ -10,7 +10,7 @@ Projeto Desenvolvido durante o BootCamp DevSuperior, O projeto consiste em um si
 (https://devsuperior.com "Site da DevSuperior").
 
 ## Modelo conceitual
-![Modelo Conceitual](https://github.com/EdmarMagalhaes/dsdeliver-sds2/blob/main/assets/modelo-conceitual.png)
+![Modelo Conceitual](https://github.com/EdmarMagalhaes/movieflix-backend-tests/blob/main/assets/ModeloConceitual.jpg)
 
 ## Padrão camadas adotado
 ![Padrão Camadas](https://github.com/EdmarMagalhaes/dsdeliver-sds2/blob/main/assets/camadas.png)
