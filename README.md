@@ -66,9 +66,8 @@ yarn install
 yarn start
 ```
 ## Layout mobile
-![Mobile 1](https://github.com/EdmarMagalhaes/dsdeliver-sds2/blob/main/assets/AppMobileCapa.jpg) ![Mobile 2](https://github.com/EdmarMagalhaes/dsdeliver-sds2/blob/main/assets/AppMobileConfirma.jpg)
-![Mobile 3](https://github.com/EdmarMagalhaes/dsdeliver-sds2/blob/main/assets/AppMobileNavegação.jpg) ![Mobile 4](https://github.com/EdmarMagalhaes/dsdeliver-sds2/blob/main/assets/AppMobilePedidos.jpg)
-![Mobile 5](https://github.com/EdmarMagalhaes/dsdeliver-sds2/blob/main/assets/AppMobilePedConfirm.jpg)
+![Mobile 1](https://github.com/EdmarMagalhaes/movieflix-backend-tests/blob/main/assets/MobileLogin.jpg) 
+![Mobile 5](https://github.com/EdmarMagalhaes/movieflix-backend-tests/blob/main/assets/MobileDetalhes.jpg)
 
 ## Layout web
 ![Web 1](https://github.com/EdmarMagalhaes/dsdeliver-sds2/blob/main/assets/AppWebCapa.jpg)
