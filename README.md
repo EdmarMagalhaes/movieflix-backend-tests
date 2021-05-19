@@ -6,7 +6,7 @@
 
 https://edmarsds2.netlify.app
 
-Projeto Desenvolvido durante BootCamp DevSuperior, o projeto consiste em um sistema de apreço e avaliações de filmes, onde usuários visitantes podem visualizar e apreciar os filmes, já usuários membros podem além disso também fazer avaliações sobre os filmes . Utilizei Java com Spring Boot, e implantação no Heroku.
+Projeto desenvolvido durante BootCamp DevSuperior, o projeto consiste em um sistema de apreço e avaliações de filmes, onde usuários visitantes podem visualizar e apreciar os filmes, já usuários membros podem além disso também fazer avaliações sobre os filmes . Utilizei Java com Spring Boot, e implantação no Heroku.
 (https://devsuperior.com "Site da DevSuperior").
 ## Layout mobile
 ![Mobile 1](https://github.com/EdmarMagalhaes/dsdeliver-sds2/blob/main/assets/AppMobileCapa.jpg) ![Mobile 2](https://github.com/EdmarMagalhaes/dsdeliver-sds2/blob/main/assets/AppMobileConfirma.jpg)
