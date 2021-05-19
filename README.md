@@ -54,7 +54,7 @@ Pré-requisitos: npm / yarn
 
 ```bash
 # clonar repositório
-git clone https://github.com/EdmarMagalhaes/dsdeliver-sds2.git
+git clone https://github.com/EdmarMagalhaes/movieflix-backend-tests.git
 
 # entrar na pasta do projeto front end web
 cd front-web
