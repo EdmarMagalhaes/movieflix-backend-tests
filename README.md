@@ -4,7 +4,7 @@
 
 # Sobre o projeto
 
-https://edmarsds2.netlify.app
+https://edmar-movieflix.netlify.app
 
 Projeto desenvolvido durante o BootCamp DevSuperior, O projeto consiste em um sistema de apreço e avaliação de filmes, os usuários visitantes podem visualizar e apreciar as caracteristicas de todos os filmes, já usuários membros além disso podem também inserir avaliações para cada filme. Utilizamos Java com Spring Boot, e implantação no Heroku.
 (https://devsuperior.com "Site da DevSuperior").
