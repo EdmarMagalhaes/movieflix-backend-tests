@@ -1,4 +1,4 @@
-# MovieFilix
+# MovieFlix
 
 [![NPM](https://img.shields.io/npm/l/react)](https://github.com/EdmarMagalhaes/movieflix-backend-tests/blob/main/LICENSE) 
 
