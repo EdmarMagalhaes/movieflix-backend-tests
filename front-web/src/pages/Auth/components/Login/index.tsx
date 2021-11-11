@@ -1,21 +1,34 @@
 import React from "react";
+import { useForm } from "react-hook-form";
 import AuthCard from "../Card";
-
 import "./style.scss"
 
-const Login = () => (
-    <div>
+type FormData = {
+    email: string;
+    password: string;
+}
+
+const Login = () => {
+    const { register, handleSubmit } = useForm();
+
+    const onSubmit = (data: FormData) => {
+        console.log(data)
+
+    }
+    return (
         <AuthCard title="login">
-                <form className="login-form">
+                <form className="login-form" onSubmit={handleSubmit(onSubmit)}>
                     <input 
                     type="email" 
                     className="form-control input-base margin-botton-30" 
                     placeholder="Email"
+                    {...register("email")}
                     />
                     <input 
                     type="password" 
                     className="form-control input-base" 
                     placeholder="Senha"
+                    {...register("password")}
                     />
                     <div className="login-submit">
                     <button className="btn btn-primary form-control btn-style">
@@ -24,6 +37,7 @@ const Login = () => (
                     </div>
                 </form>
         </AuthCard>
-    </div>
-);
+  
+)
+    };
 export default Login;
