@@ -1,10 +1,11 @@
+import { makeLogin } from "core/utils/request";
 import React from "react";
 import { useForm } from "react-hook-form";
 import AuthCard from "../Card";
 import "./style.scss"
 
 type FormData = {
-    email: string;
+    username: string;
     password: string;
 }
 
@@ -12,7 +13,7 @@ const Login = () => {
     const { register, handleSubmit } = useForm();
 
     const onSubmit = (data: FormData) => {
-        console.log(data)
+        makeLogin(data);
 
     }
     return (
@@ -22,7 +23,7 @@ const Login = () => {
                     type="email" 
                     className="form-control input-base margin-botton-30" 
                     placeholder="Email"
-                    {...register("email")}
+                    {...register("username")}
                     />
                     <input 
                     type="password" 

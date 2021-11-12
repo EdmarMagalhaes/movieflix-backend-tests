@@ -1,7 +1,7 @@
 .auth-container {
     display: flex;
-    padding: 40px 116px 340px 97px;
-    
+    padding: 40px 116px 340px 0;
+    justify-content: center;
 }
 
 .auth-info-title{
@@ -22,5 +22,5 @@
 }
 
 .auth-content {
-    margin-left: 370px;
+    margin-left: 351px;
 }
