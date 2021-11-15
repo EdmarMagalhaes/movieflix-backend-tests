@@ -1,8 +1,12 @@
 import { makeLogin } from "core/utils/request";
-import React from "react";
+import React, { useState } from "react";
+import {toast } from "react-toastify";
 import { useForm } from "react-hook-form";
 import AuthCard from "../Card";
 import "./style.scss"
+import { saveSessionData } from "core/utils/auth";
+import { useHistory } from "react-router-dom";
+
 
 type FormData = {
     username: string;
@@ -10,33 +14,60 @@ type FormData = {
 }
 
 const Login = () => {
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit, formState: {errors} } = useForm();
+    const [hasError, setHasError] = useState(false);
+    const history = useHistory();
 
     const onSubmit = (data: FormData) => {
-        makeLogin(data);
-
+        makeLogin(data)
+        .then(response => {
+            setHasError(false);
+            saveSessionData(response.data);
+            history.push('/movies');
+        })
+        .catch(() =>{
+            setHasError(true);
+            toast.error('Usuário ou senha inválidos!');
+        })
     }
+      
     return (
-        <AuthCard title="login">
+        <AuthCard title="login">           
                 <form className="login-form" onSubmit={handleSubmit(onSubmit)}>
-                    <input 
-                    type="email" 
-                    className="form-control input-base margin-botton-30" 
-                    placeholder="Email"
-                    {...register("username")}
-                    />
-                    <input 
-                    type="password" 
-                    className="form-control input-base" 
-                    placeholder="Senha"
-                    {...register("password")}
-                    />
+                    <div className="margin-botton-30">
+                        <input 
+                            type="email" 
+                            className={`form-control input-base ${errors.username ? 'is-invalid' : ''} `}
+                            placeholder="Email"
+                            {...register("username", { required: "Campo obrigatório", pattern: {value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i, message: "Email inválido"}})}
+                            />
+                        {errors.username && (
+                            <div className="errorvalidation">
+                            {errors.username.message}
+                            </div>
+                        )}
+                    </div>
+                   
+                   <div className="margin-botton-30">
+                        <input 
+                            type="password" 
+                            className={`form-control input-base ${errors.password ? 'is-invalid' : ''} `}
+                            placeholder="Senha"
+                            {...register("password", { required: "Campo obrigatório"})}
+                            />
+                            {errors.password && (
+                            <div className="errorvalidation">
+                            {errors.password.message}
+                            </div>
+                        )}
+                        </div>
                     <div className="login-submit">
-                    <button className="btn btn-primary form-control btn-style">
-                    <h6 className="font-size">FAZER LOGIN</h6>
-                    </button>
+                        <button className="btn btn-primary form-control btn-style">
+                        <h6 className="font-size">FAZER LOGIN</h6>
+                        </button>
                     </div>
                 </form>
+                
         </AuthCard>
   
 )

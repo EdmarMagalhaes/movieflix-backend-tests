@@ -2,13 +2,18 @@
     height: 68px;
     color: rgb(0, 0, 0);
     align-items: center;
-    padding-left: 49px;
+    padding-left: 26px;
     margin-left: 0;
     margin-right: 0;
- 
+    display: flex;
 }
 
 .nav-logo-text {
     color: rgb(0, 0, 0);
 }
 
+.position-btnlogout{
+    position: absolute;
+	right: 90px;
+    
+}
