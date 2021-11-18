@@ -1,10 +1,8 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import LogoutButton from "../Buttonout";
+import LogoutButton from "../LogoutButton";
+import RenderLogoutButton from "../LogoutButton/RenderLogoutButton";
 import "./styles.scss";
-
-
-
 
 const Navbar = () => (
     
@@ -14,11 +12,9 @@ const Navbar = () => (
             <h4>MovieFlix</h4>
             </Link>
         </div>     
-       
-        
-        <div className= "col-1 position-btnlogout">
+        <RenderLogoutButton>
             <LogoutButton />
-        </div>
+        </RenderLogoutButton>
    
     </nav>
  

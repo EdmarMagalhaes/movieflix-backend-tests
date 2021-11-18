@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import AuthCard from "../Card";
 import "./style.scss"
 import { saveSessionData } from "core/utils/auth";
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 
 
 type FormData = {
@@ -13,26 +13,34 @@ type FormData = {
     password: string;
 }
 
+type LocationState = {
+    from: string;
+}
+
 const Login = () => {
     const { register, handleSubmit, formState: {errors} } = useForm();
-    const [hasError, setHasError] = useState(false);
+    const[ hasError, setHasError] = useState(false);
     const history = useHistory();
+    let location = useLocation<LocationState>();
+    
+    const { from } = location.state || { from: { pathname: "/movies" } };
 
     const onSubmit = (data: FormData) => {
         makeLogin(data)
         .then(response => {
             setHasError(false);
             saveSessionData(response.data);
-            history.push('/movies');
+            history.replace(from);
         })
         .catch(() =>{
             setHasError(true);
             toast.error('Usuário ou senha inválidos!');
         })
+        console.log(hasError);
     }
       
     return (
-        <AuthCard title="login">           
+        <AuthCard title="login">    
                 <form className="login-form" onSubmit={handleSubmit(onSubmit)}>
                     <div className="margin-botton-30">
                         <input 
