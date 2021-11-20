@@ -1,12 +1,24 @@
 import React from "react";
+import MovieCard from "./components/MovieCard";
+import './styles.scss';
 
 const Movies = () => (
-    <div>
-        <h1>Movies</h1>
-        <br />
-        <a href='/moveis/MoviesId' className="btn btn-primary style-btnlogout">
-     <h6 className="btnlogout-font-size">Teste</h6>
-    </a>
+    <div className="catalog-moveis-container">
+       <h1>
+           Catalogo de filmes
+        </h1>
+        <div className="catalog-movies">
+            <MovieCard />
+            <MovieCard />
+            <MovieCard />
+            <MovieCard />
+            <MovieCard />
+            <MovieCard />
+            <MovieCard />
+            <MovieCard />
+            
+        </div>
+   
     </div>
 );
 export default Movies;

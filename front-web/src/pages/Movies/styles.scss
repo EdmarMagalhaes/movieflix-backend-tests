@@ -1,0 +1,13 @@
+.catalog-moveis-container {
+    margin-top: 40px;
+    padding-left: 140px;
+    padding-right: 140px;
+}
+
+.catalog-movies {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 258px);
+    grid-gap: 33px 15px;
+    justify-content: space-between;
+}
