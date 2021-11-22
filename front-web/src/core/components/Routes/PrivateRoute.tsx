@@ -2,38 +2,22 @@ import { isAllowedByRole, isAuthenticated, Role } from "core/utils/auth";
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
 
-type Props = {
-    children: React.ReactNode;
-    path: string;
-    allowedRoutes?: Role[];
-}
-
-const PrivateRoute = ({ children, path, allowedRoutes }: Props) => {
-    return (
-      <Route
-       path={path}
-        render={({ location }) => {
-            if (!isAuthenticated()) {
-                return (
+const PrivateRoute = ({ component: Component, ...rest }: any) => (
+    <Route
+        {...rest}
+        render={props =>
+            isAuthenticated() ? (
+                <Component {...props} />
+            ) : (
                     <Redirect
-                       to={{
-                       pathname: "/",
-                       state: { from: location }
-                    }}
-                  />
-                )                       
-            } else if (isAuthenticated() && !isAllowedByRole(allowedRoutes)) {
-                return (
-                    <Redirect to={{ pathname: "/movies" }} />
+                        to={{
+                            pathname: "/",
+                            state: { from: props.location }
+                        }}
+                    />
                 )
-            }
-        
-            return children;
-        
-        
-        }}        
+        }
     />
-  );
-}
+);
 
-  export default PrivateRoute;
+export default PrivateRoute;

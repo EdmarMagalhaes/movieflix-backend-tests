@@ -1,10 +1,11 @@
 import React from "react";
 import { Router, Switch, Route } from 'react-router-dom';
 import Navbar from "./core/components/Navbar";
-import Login from "./pages/Auth";
+import Auth from "./pages/Auth";
 import Movies from "./pages/Movies";
 import history from "./core/utils/history";
 import PrivateRoute from "core/components/Routes/PrivateRoute";
+import MoviesDetails from "pages/Movies/components/MovieCard/MovieDetails";
 
 /*
                 <PrivateRoute path="/moveis/MoviesId" allowedRoutes={['ROLE_MEMBER']}>
@@ -18,12 +19,10 @@ const Routes = () => {
             <Navbar />
             <Switch>
                 <Route path="/" exact>
-                    <Login />
+                    <Auth />
                 </Route>
-                <PrivateRoute path="/movies">
-                    <Movies />
-                </PrivateRoute>
-               
+                <PrivateRoute exact path="/movies" component={Movies} />                   
+                <PrivateRoute path="/movies/:movieId" component={MoviesDetails} />                                 
             </Switch>
         </Router>
     )
