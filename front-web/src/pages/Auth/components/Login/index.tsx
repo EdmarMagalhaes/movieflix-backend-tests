@@ -6,6 +6,7 @@ import AuthCard from "../Card";
 import "./style.scss"
 import { saveSessionData } from "core/utils/auth";
 import { useHistory, useLocation } from "react-router-dom";
+import ButtonDefault from "../ButtonDefault";
 
 
 type FormData = {
@@ -18,7 +19,7 @@ type LocationState = {
 }
 
 const Login = () => {
-    const { register, handleSubmit, formState: {errors} } = useForm();
+    const { register, handleSubmit, formState: {errors} } = useForm<FormData>();
     const[ hasError, setHasError] = useState(false);
     const history = useHistory();
     let location = useLocation<LocationState>();
@@ -70,9 +71,7 @@ const Login = () => {
                         )}
                         </div>
                     <div className="login-submit">
-                        <button className="btn btn-primary form-control btn-style">
-                        <h6 className="font-size">FAZER LOGIN</h6>
-                        </button>
+                        <ButtonDefault title="fazer login" />
                     </div>
                 </form>
                 

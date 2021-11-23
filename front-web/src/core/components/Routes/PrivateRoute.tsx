@@ -1,4 +1,4 @@
-import { isAllowedByRole, isAuthenticated, Role } from "core/utils/auth";
+import { isAuthenticated } from "core/utils/auth";
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
 
