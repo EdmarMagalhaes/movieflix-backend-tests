@@ -4,26 +4,24 @@ import { ReactComponent as ArrowIcon } from "core/assets/images/Seta.svg"
 import { ReactComponent as MovieImage } from 'core/assets/images/movie.svg';
 import MovieDescription from "../../MovieDescription";
 import './styles.scss';
-import ButtonDefault from "pages/Auth/components/ButtonDefault";
-import { useForm } from "react-hook-form";
+import { isAllowedByRole, Role } from 'core/utils/auth';
+import FormEvaluation from "pages/Auth/components/FormEvaluation";
 
 type ParamsType = {
     movieId: string;
 }
 
-type FormData = {
-    evaluation: string;
+type Props = {
+    allowedRoutes?: Role[]; 
 }
 
-const MoviesDetails = () => {
-    const { register, handleSubmit, formState: {errors} } = useForm<FormData>();
+const MoviesDetails = ({ allowedRoutes }: Props) => {
+   
     const { movieId } = useParams<ParamsType>();
     console.log(movieId);
-
-    const onSubmit = (data: FormData) => {
-        console.log(data);
-    }
-   
+    
+allowedRoutes=(['ROLE_MEMBER'])
+       
     return (
         <div className="movie-details-container">
             <div className="card-base boder-radius-10 movie-details">
@@ -52,27 +50,12 @@ const MoviesDetails = () => {
                 </div>
             </div>
             <div className="card-base boder-radius-4 movie-evaluation text-center" >
-                
-                <form onSubmit={handleSubmit(onSubmit)}>
-                <div className="margin-botton-30">
-                    <input
-                        type="text"
-                        className={`form-control input-evaluation ${errors.evaluation ? 'is-invalid' : ''} `}
-                        placeholder="Deixe sua avaliação aqui"
-                        {...register("evaluation", { required: "Campo não pode ser em branco!" })}
-                    />
-                    {errors.evaluation && (
-                        <div className="errorvalidation-evaluation">
-                            {errors.evaluation.message}
-                        </div>
-                    )}
-                    
-                </div>
-                    <div>
-                    <ButtonDefault title="SALVAR AVALIAÇÃO" name="BtnEvaluation" />
-                    </div>
-                </form>
-                
+            {isAllowedByRole(allowedRoutes) ? (
+                <FormEvaluation placeholder="Deixe sua avaliação aqui!" value={false} />
+                ) : (
+                <FormEvaluation placeholder="Para fazer uma avaliação é necessário se cadastrar!" value={true} />
+                )
+                }
             </div>
         </div>
     );
