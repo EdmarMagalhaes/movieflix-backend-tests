@@ -5,7 +5,7 @@ import { ReactComponent as MovieImage } from 'core/assets/images/movie.svg';
 import MovieDescription from "../../MovieDescription";
 import './styles.scss';
 import { isAllowedByRole, Role } from 'core/utils/auth';
-import FormEvaluation from "pages/Auth/components/FormEvaluation";
+import FormEvaluation from "pages/Movies/components/FormEvaluation";
 
 type ParamsType = {
     movieId: string;

@@ -6,7 +6,7 @@ import AuthCard from "../Card";
 import "./style.scss"
 import { saveSessionData } from "core/utils/auth";
 import { useHistory, useLocation } from "react-router-dom";
-import ButtonDefault from "../ButtonDefault";
+import ButtonDefault from "core/components/ButtonDefault";
 
 
 type FormData = {

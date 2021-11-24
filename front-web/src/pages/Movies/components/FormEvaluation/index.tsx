@@ -1,6 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import ButtonDefault from "../ButtonDefault";
+import ButtonDefault from "core/components/ButtonDefault";
 import "./styles.scss";
 
 type Props = {
@@ -30,7 +30,6 @@ const FormEvaluation = ({ value, placeholder }: Props) => {
                         placeholder={placeholder}
                         {...register("evaluation", { required: "Campo não pode ser em branco!" })}
                     />
-                    
                     {errors.evaluation && (
                         <div className="errorvalidation-evaluation">
                             {errors.evaluation.message}
@@ -38,9 +37,7 @@ const FormEvaluation = ({ value, placeholder }: Props) => {
                     )}
                     
                 </div>
-                    <div>
-                    <ButtonDefault title="SALVAR AVALIAÇÃO" name="BtnEvaluation"  value={value} />
-                    </div>          
+                    <ButtonDefault title="SALVAR AVALIAÇÃO" name="BtnEvaluation"  value={value} />   
                 </form>
     );
 };
