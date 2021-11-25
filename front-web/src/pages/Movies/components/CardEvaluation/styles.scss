@@ -1,0 +1,38 @@
+.evaluation-container {
+    display: block;
+}
+
+.evaluation-title{
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+.name-evaluation {
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: -0.015em;
+    
+}
+
+.icon-evaluation {
+    margin-right: 15px;
+    width: 14px;
+    height: 13px;
+}
+
+.evaluation-box {
+    border: 1px solid #E1E1E1;
+    height: 51px;
+    padding: 13px 22px;
+    margin-bottom: 24px;
+    
+}
+
+.text-evaluation {
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: normal;
+    text-align: justify;
+    letter-spacing: -0.015em;
+    color: #9E9E9E;
+}

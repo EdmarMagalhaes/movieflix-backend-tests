@@ -1,11 +1,12 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
 import { ReactComponent as ArrowIcon } from "core/assets/images/Seta.svg"
-import { ReactComponent as MovieImage } from 'core/assets/images/movie.svg';
+import { ReactComponent as MovieImage } from "core/assets/images/movie.svg";
 import MovieDescription from "../../MovieDescription";
-import './styles.scss';
-import { isAllowedByRole, Role } from 'core/utils/auth';
+import "./styles.scss";
+import { isAllowedByRole, Role } from "core/utils/auth";
 import FormEvaluation from "pages/Movies/components/FormEvaluation";
+import CardEvaluation from "../../CardEvaluation";
 
 type ParamsType = {
     movieId: string;
@@ -24,7 +25,7 @@ allowedRoutes=(['ROLE_MEMBER'])
        
     return (
         <div className="movie-details-container">
-            <div className="card-base boder-radius-10 movie-details">
+            <div className="card-base border-radius-10 movie-details">
                 <Link to="/movies" className="movie-detail-goback">
                     <ArrowIcon className="icon-goback" />
                     <h1 className="text-goback">voltar</h1>
@@ -36,7 +37,7 @@ allowedRoutes=(['ROLE_MEMBER'])
                     <div className="col-6">
                         <div className="movie-info">
                             <MovieDescription />
-                            <div className="movie-box-details boder-radius-10">
+                            <div className="movie-box-details border-radius-10">
                                 <h6 className="movie-synopsy-text">
                                     O confronto final entre as forças do bem e do mal que lutam pelo controle do futuro da Terra Média se aproxima.
                                     Sauron planeja um grande ataque a Minas Tirith, capital de Gondor, o que faz com que Gandalf e Pippin partam
@@ -49,13 +50,20 @@ allowedRoutes=(['ROLE_MEMBER'])
                     </div>
                 </div>
             </div>
-            <div className="card-base boder-radius-4 movie-evaluation text-center" >
+            <div className="card-base border-radius-4 movie-evaluation text-center" >
             {isAllowedByRole(allowedRoutes) ? (
                 <FormEvaluation placeholder="Deixe sua avaliação aqui!" value={false} />
                 ) : (
-                <FormEvaluation placeholder="Para fazer uma avaliação é necessário se cadastrar!" value={true} />
+                <FormEvaluation placeholder="Para fazer uma avaliação é necessário se tonar membro!" value={true} />
                 )
                 }
+            </div>
+            <div className="card-base border-radius-4 show-evaluation">
+                <CardEvaluation />
+                <CardEvaluation />
+                <CardEvaluation />
+                <CardEvaluation />
+                
             </div>
         </div>
     );
