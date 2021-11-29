@@ -1,26 +1,26 @@
-.evaluation-container {
+.review-container {
     display: block;
 }
 
-.evaluation-title{
+.review-title{
     display: flex;
     align-items: center;
     margin-bottom: 8px;
 }
-.name-evaluation {
+.name-review {
     font-size: 16px;
     line-height: 22px;
     letter-spacing: -0.015em;
     
 }
 
-.icon-evaluation {
+.icon-review {
     margin-right: 15px;
     width: 14px;
     height: 13px;
 }
 
-.evaluation-box {
+.review-box {
     border: 1px solid #E1E1E1;
     height: 51px;
     padding: 13px 22px;
@@ -28,7 +28,7 @@
     
 }
 
-.text-evaluation {
+.text-review {
     font-size: 16px;
     line-height: 22px;
     font-weight: normal;

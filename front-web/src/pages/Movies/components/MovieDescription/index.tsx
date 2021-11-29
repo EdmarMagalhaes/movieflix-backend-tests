@@ -1,16 +1,21 @@
+import { Movie } from "core/types/Movie";
 import React from "react";
 import './styles.scss';
 
-const MovieDescription = () => (
+type Props = {
+    movie: Movie;
+}
+
+const MovieDescription = ({ movie }: Props) => (
     <div className="movie-info-description">
     <h6 className="movie-title">
-    O Retorno do Rei
+        {movie.title}
     </h6>
     <h6 className="movie-year"> 
-    2013
+        {movie.year}
     </h6>
     <h6 className="movie-subtitle">
-    O olho do inimigo está se movendo.
+        {movie.subTitle}
     </h6>
 </div>
 );

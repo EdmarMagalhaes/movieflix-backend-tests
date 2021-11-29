@@ -21,7 +21,7 @@ const Navbar = () => {
     return (
         <nav className="row bg-primary main-nav">
             <div className="col-2">
-                <Link to="/" className="nav-logo-text">
+                <Link to="/movies" className="nav-logo-text">
                     <h4>MovieFlix</h4>
                 </Link>
             </div>
@@ -34,7 +34,6 @@ const Navbar = () => {
                             onClick={handleLogout}
                             >
                             <h6 className="btnlogout-font-size">SAIR</h6>
-                            
                         </a>
                     </div>
                 </>

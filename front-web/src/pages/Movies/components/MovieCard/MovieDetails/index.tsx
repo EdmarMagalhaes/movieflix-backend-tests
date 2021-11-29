@@ -5,18 +5,20 @@ import { ReactComponent as MovieImage } from "core/assets/images/movie.svg";
 import MovieDescription from "../../MovieDescription";
 import "./styles.scss";
 import { isAllowedByRole, Role } from "core/utils/auth";
-import FormEvaluation from "pages/Movies/components/FormEvaluation";
-import CardEvaluation from "../../CardEvaluation";
+import FormReview from "pages/Movies/components/FormReview";
+import { Movie } from "core/types/Movie";
+import CardReview from "../../CardReview";
 
 type ParamsType = {
     movieId: string;
 }
 
 type Props = {
-    allowedRoutes?: Role[]; 
+    allowedRoutes?: Role[];
+    movie: Movie;   
 }
 
-const MoviesDetails = ({ allowedRoutes }: Props) => {
+const MoviesDetails = ({ allowedRoutes, movie }: Props) => {
    
     const { movieId } = useParams<ParamsType>();
     console.log(movieId);
@@ -36,7 +38,7 @@ allowedRoutes=(['ROLE_MEMBER'])
                     </div>
                     <div className="col-6">
                         <div className="movie-info">
-                            <MovieDescription />
+                            <MovieDescription movie={movie}  />
                             <div className="movie-box-details border-radius-10">
                                 <h6 className="movie-synopsy-text">
                                     O confronto final entre as forças do bem e do mal que lutam pelo controle do futuro da Terra Média se aproxima.
@@ -50,20 +52,19 @@ allowedRoutes=(['ROLE_MEMBER'])
                     </div>
                 </div>
             </div>
-            <div className="card-base border-radius-4 movie-evaluation text-center" >
+            <div className="card-base border-radius-4 movie-review text-center" >
             {isAllowedByRole(allowedRoutes) ? (
-                <FormEvaluation placeholder="Deixe sua avaliação aqui!" value={false} />
+                <FormReview placeholder="Deixe sua avaliação aqui!" value={false} />
                 ) : (
-                <FormEvaluation placeholder="Para fazer uma avaliação é necessário se tonar membro!" value={true} />
+                <FormReview placeholder="Para fazer uma avaliação é necessário se tonar membro!" value={true} />
                 )
                 }
             </div>
-            <div className="card-base border-radius-4 show-evaluation">
-                <CardEvaluation />
-                <CardEvaluation />
-                <CardEvaluation />
-                <CardEvaluation />
-                
+            <div className="card-base border-radius-4 show-review">
+                <CardReview />
+                <CardReview />
+                <CardReview />
+                <CardReview />
             </div>
         </div>
     );

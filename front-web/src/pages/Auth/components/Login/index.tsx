@@ -9,7 +9,7 @@ import { useHistory, useLocation } from "react-router-dom";
 import ButtonDefault from "core/components/ButtonDefault";
 
 
-type FormData = {
+type FormState = {
     username: string;
     password: string;
 }
@@ -19,14 +19,14 @@ type LocationState = {
 }
 
 const Login = () => {
-    const { register, handleSubmit, formState: {errors} } = useForm<FormData>();
+    const { register, handleSubmit, formState: {errors} } = useForm<FormState>();
     const[ hasError, setHasError] = useState(false);
     const history = useHistory();
     let location = useLocation<LocationState>();
     
     const { from } = location.state || { from: { pathname: "/movies" } };
 
-    const onSubmit = (data: FormData) => {
+    const onSubmit = (data: FormState) => {
         makeLogin(data)
         .then(response => {
             setHasError(false);

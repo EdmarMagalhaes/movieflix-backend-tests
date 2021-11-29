@@ -7,11 +7,7 @@ import history from "./core/utils/history";
 import PrivateRoute from "core/components/Routes/PrivateRoute";
 import MoviesDetails from "pages/Movies/components/MovieCard/MovieDetails";
 
-/*
-                <PrivateRoute path="/moveis/MoviesId" allowedRoutes={['ROLE_MEMBER']}>
-                    <MoviesId />
-                </PrivateRoute> 
-                */
+
 
 const Routes = () => {
     return(
@@ -22,7 +18,7 @@ const Routes = () => {
                     <Auth />
                 </Route>
                 <PrivateRoute exact path="/movies" component={Movies} />                   
-                <PrivateRoute path="/movies/:movieId" component={MoviesDetails} />                                 
+                <PrivateRoute path="/movies/:movieId" component={MoviesDetails} />                              
             </Switch>
         </Router>
     )
