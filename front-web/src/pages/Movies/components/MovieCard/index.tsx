@@ -1,5 +1,4 @@
 import React from "react";
-import { ReactComponent as MovieImage } from 'core/assets/images/movie.svg';
 import MovieDescription from "../MovieDescription";
 import './styles.scss';
 import { Movie } from "core/types/Movie";
@@ -8,10 +7,9 @@ import { Movie } from "core/types/Movie";
      movie: Movie;
  }
 const MovieCard = ({ movie }: Props) => (
-    <div className="card-base boder-radius-4 movie-card">
-        <MovieImage />
+    <div className="card-base border-radius-4 movie-card">
+        <img src={movie.imgUri} alt={movie.title} className="movie-card-image" />
         <MovieDescription movie={movie} />
-       
     </div>
 );
 

@@ -1,6 +1,8 @@
 import React from "react";
 import { ReactComponent as EvaluationImage } from "core/assets/images/estrela.svg" 
 import './styles.scss';
+import { Movie } from "core/types/Movie";
+
 
 const CardReview = () => (
     <div className="review-container">

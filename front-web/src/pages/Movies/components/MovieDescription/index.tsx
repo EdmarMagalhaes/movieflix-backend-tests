@@ -7,7 +7,7 @@ type Props = {
 }
 
 const MovieDescription = ({ movie }: Props) => (
-    <div className="movie-info-description">
+<div className="movie-info-description">
     <h6 className="movie-title">
         {movie.title}
     </h6>

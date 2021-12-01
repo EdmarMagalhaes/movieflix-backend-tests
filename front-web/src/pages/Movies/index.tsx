@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import MovieCard from "./components/MovieCard";
-import { makePrivateRequest, makeRequest } from "core/utils/request";
+import { makePrivateRequest } from "core/utils/request";
 import './styles.scss';
 import { MoviesResponse } from "core/types/Movie";
 
@@ -17,7 +17,7 @@ const Movies = () => {
       linesPerPage: 12
     }
     setIsLoading(true);
-    makePrivateRequest({url: "/moveis", params})
+    makePrivateRequest({url: "/movies", params})
       .then(response => setMoviesResponse(response.data))
       .finally(() => {
         setIsLoading(false);
@@ -25,7 +25,7 @@ const Movies = () => {
   }, [activePage]);
 
   return (
-      <div className="catalog-moveis-container">
+      <div className="catalog-movies-container">
       <h1>
           Catalogo de filmes
        </h1>
