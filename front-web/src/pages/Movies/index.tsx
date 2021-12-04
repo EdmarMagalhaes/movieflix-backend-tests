@@ -4,6 +4,7 @@ import MovieCard from "./components/MovieCard";
 import { makePrivateRequest } from "core/utils/request";
 import './styles.scss';
 import { MoviesResponse } from "core/types/Movie";
+import MovieCardLoader from "./components/Loaders/MovieCardLoader";
 
 const Movies = () => {
    const [moviesResponse, setMoviesResponse ] = useState<MoviesResponse>();
@@ -30,11 +31,14 @@ const Movies = () => {
           Catalogo de filmes
        </h1>
        <div className="catalog-movies">
-        {moviesResponse?.content.map(movie => (
-           <Link to={`/movies/${movie.id}`} key={movie.id}> 
-           <MovieCard movie={movie} /> 
-           </Link> 
-        ))}
+        {isLoading ? <MovieCardLoader /> : (
+          moviesResponse?.content.map(movie => (
+            <Link to={`/movies/${movie.id}`} key={movie.id}> 
+            <MovieCard movie={movie} /> 
+            </Link> 
+         ))
+        )}
+       
         
            
        </div>

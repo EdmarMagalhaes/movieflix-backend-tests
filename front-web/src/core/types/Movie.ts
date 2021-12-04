@@ -10,14 +10,19 @@ export type Movie = {
     imgUri: string;
     synopsis: string;
     genreId: number,
-    reviews: Rewiews [];
+    reviews: Reviews [];
     }
     
-    export type Rewiews = {
+    export type Reviews = {
         id: number;
         text: string;
         movieId: number;
-        userId: number
+        user: User;
     }
- 
+     export type User = {
+         id: number;
+         name: string;
+         email: string;
+         password: string;
+     }
 

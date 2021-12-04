@@ -1,20 +1,23 @@
 import React from "react";
 import { ReactComponent as EvaluationImage } from "core/assets/images/estrela.svg" 
 import './styles.scss';
-import { Movie } from "core/types/Movie";
+import { Reviews, User } from "core/types/Movie";
 
-
-const CardReview = () => (
+type Props = {
+    name?: string;
+    text?: string;
+}
+const CardReview = ({ name, text}: Props) => (
     <div className="review-container">
         <div className="review-title">
             <EvaluationImage className="icon-review" />
                 <h6 className="name-review">
-                    Ana Green 
+                  {text}
                 </h6>
         </div>
             <div className="review-box border-radius-4">
                 <h6 className="text-review">
-                    Gostei muito do filme. Foi muito bom mesmo. Pena que durou pouco.
+                    {name}
                 </h6>
             </div>
         
