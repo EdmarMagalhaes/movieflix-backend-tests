@@ -1,8 +1,8 @@
-import React from "react"
+import { generateList } from "core/utils/list"
 import ContentLoader from "react-content-loader"
 
 const MovieCardLoader = () => {
-    const loderItems = [0, 1, 2];
+    const loderItems = generateList(3);
 
     return (
         <>

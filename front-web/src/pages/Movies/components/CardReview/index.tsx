@@ -1,7 +1,7 @@
 import React from "react";
-import { ReactComponent as EvaluationImage } from "core/assets/images/estrela.svg" 
+import { ReactComponent as ReviewImage } from "core/assets/images/estrela.svg" 
 import './styles.scss';
-import { Reviews, User } from "core/types/Movie";
+
 
 type Props = {
     name?: string;
@@ -10,7 +10,7 @@ type Props = {
 const CardReview = ({ name, text}: Props) => (
     <div className="review-container">
         <div className="review-title">
-            <EvaluationImage className="icon-review" />
+            <ReviewImage className="icon-review" />
                 <h6 className="name-review">
                   {text}
                 </h6>

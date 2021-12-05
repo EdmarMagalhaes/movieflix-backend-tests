@@ -8,14 +8,14 @@ import { logout } from "core/utils/auth";
 const Auth = () => (
     
     <div className="auth-container">
-        <div className="auth-info">
+        <div className="auth-info text-center">
             <h1 className="auth-info-title">
                 Avalie Filmes
             </h1>
             <p className="auth-info-subtitle">
-                Diga o que você achou do seu <br /> filme favorito
+               Diga o que você achou do seu <br />filme favorito                
             </p>
-            <AuthImage />
+              <AuthImage />
         </div>
         <div className="auth-content">
             <Login />
