@@ -1,0 +1,69 @@
+.movie-filters-container {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    
+}
+
+.filter-select-container {
+    height: 50px;
+    border-radius: 4px;
+        
+   .movie-genre-select__control {
+       height: 50px;
+       width: 260px;   
+       background-color: #6C6C6C;
+   }
+
+   .movie-genre-select__container {
+        height: 30px;
+    }
+
+   .movie-genre-select__indicator-separator {
+        display: none;
+   }
+
+   .movie-genre-select__placeholder {
+        font-size: 16px;
+        color: #fff;
+        font-style: normal; 
+        font-weight: 400;  
+   }
+
+   .movie-genre-select__option {
+        font-size: 16px;
+        font-style: normal; 
+        font-weight: 400;  
+      
+   }
+
+   .movie-genre-select__menu {
+        background-color: #6C6C6C;
+   }
+
+   .movie-genre-select__value-container {
+   
+        background-color: #6C6C6C;
+        
+    } 
+    .movie-genre-select__input{
+        font-size: 16px;
+        font-style: normal; 
+        font-weight: 400;  
+    }
+
+    .movie-genre-select__single-value{
+        font-size: 16px;
+        font-style: normal; 
+        font-weight: 400; 
+        color: #fff; 
+    }
+
+    .movie-genre-select__clear-indicator {
+        color: #fff;
+    }
+    .movie-genre-select__dropdown-indicator {
+        color: #fff;
+    }
+}
