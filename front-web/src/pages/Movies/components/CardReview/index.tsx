@@ -7,7 +7,7 @@ type Props = {
     name?: string;
     text?: string;
 }
-const CardReview = ({ name, text}: Props) => (
+const CardReview = ({ name, text }: Props) => (
     <div className="review-container">
         <div className="review-title">
             <ReviewImage className="icon-review" />
