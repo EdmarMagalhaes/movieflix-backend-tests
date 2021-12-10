@@ -1,22 +1,43 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import ButtonDefault from "core/components/ButtonDefault";
+import { makePrivateRequest } from "core/utils/request";
 import "./styles.scss";
+
 
 type Props = {
     value?: boolean;
     placeholder?: string;
+    ValueMovieId?: number
+   
 }
 
 type FormState = {
-    review: string;
+    text: string;
+    movieId: string;
+    userId: number;
 }
 
 
-const FormReview = ({ value, placeholder }: Props) => {
+const FormReview = ({ value, placeholder, ValueMovieId }: Props) => {
     const { register, handleSubmit, formState: {errors} } = useForm<FormState>();
     const onSubmit = (data: FormState) => {
-        console.log(data);
+      const payload = {
+          ...data,
+          movieId: ValueMovieId
+       
+      }
+      
+      makePrivateRequest({ 
+          url: '/reviews', 
+          method: 'POST', 
+          data: payload
+        })
+            .then(() => {
+                document.location.reload();
+               
+            
+            })
     }
     
     return(
@@ -26,16 +47,16 @@ const FormReview = ({ value, placeholder }: Props) => {
                         type="text"
                         id="TextReview"
                         disabled = {value}
-                        className={`form-control input-review ${errors.review ? 'is-invalid' : ''} `}
+                        className={`form-control input-review ${errors.text ? 'is-invalid' : ''} `}
                         placeholder={placeholder}
-                        {...register("review", { required: "Campo não pode ser em branco!" })}
+                        {...register("text", { required: "Campo não pode ser em branco!" })}
                     />
-                    {errors.review && (
+                    {errors.text && (
                         <div className="errorvalidation-review">
-                            {errors.review.message}
+                            {errors.text.message}
                         </div>
                     )}
-                    
+              
                 </div>
                     <ButtonDefault title="SALVAR AVALIAÇÃO" name="BtnReview"  value={value} />   
                 </form>

@@ -1,5 +1,5 @@
 import { makeLogin } from "core/utils/request";
-import React, { useState } from "react";
+import React from "react";
 import {toast } from "react-toastify";
 import { useForm } from "react-hook-form";
 import AuthCard from "../Card";
@@ -20,7 +20,6 @@ type LocationState = {
 
 const Login = () => {
     const { register, handleSubmit, formState: {errors} } = useForm<FormState>();
-    const[ hasError, setHasError] = useState(false);
     const history = useHistory();
     let location = useLocation<LocationState>();
     
@@ -29,15 +28,14 @@ const Login = () => {
     const onSubmit = (data: FormState) => {
         makeLogin(data)
         .then(response => {
-            setHasError(false);
+            
             saveSessionData(response.data);
             history.replace(from);
         })
         .catch(() =>{
-            setHasError(true);
             toast.error('Usuário ou senha inválidos!');
         })
-        console.log(hasError);
+       
     }
       
     return (
