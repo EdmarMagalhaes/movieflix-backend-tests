@@ -8,35 +8,27 @@ import "./styles.scss";
 type Props = {
     value?: boolean;
     placeholder?: string;
-    ValueMovieId?: number
-   
+    ValueMovieId?: number  
 }
-
 type FormState = {
     text: string;
     movieId: string;
     userId: number;
 }
-
-
 const FormReview = ({ value, placeholder, ValueMovieId }: Props) => {
     const { register, handleSubmit, formState: {errors} } = useForm<FormState>();
     const onSubmit = (data: FormState) => {
       const payload = {
           ...data,
           movieId: ValueMovieId
-       
       }
-      
       makePrivateRequest({ 
           url: '/reviews', 
           method: 'POST', 
           data: payload
         })
-            .then(() => {
-                document.location.reload();
-               
-            
+            .then(() => {  
+                document.location.reload();         
             })
     }
     

@@ -83,7 +83,7 @@ const MoviesDetails = ({ allowedRoutes }: Props) => {
             <div className="card-base border-radius-4 show-review">
                 {movie?.reviews && movie.reviews.length > 0 ? (
                     movie?.reviews.map(review => (
-                        <div key={movie.id}>
+                        <div key={review.id}>
                             <CardReview name={review.text} text={review.user.name} />
                         </div>
                     ))

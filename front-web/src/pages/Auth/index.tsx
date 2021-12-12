@@ -2,7 +2,7 @@ import React from "react";
 import { ReactComponent as AuthImage} from 'core/assets/images/auth.svg';
 import './styles.scss';
 import Login from "./components/Login";
-import { logout } from "core/utils/auth";
+
 
 
 const Auth = () => (
@@ -19,7 +19,6 @@ const Auth = () => (
         </div>
         <div className="auth-content">
             <Login />
-            {logout()}
         </div>
     </div>
 

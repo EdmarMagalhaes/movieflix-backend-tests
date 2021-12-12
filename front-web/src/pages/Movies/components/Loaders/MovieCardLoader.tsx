@@ -8,6 +8,7 @@ const MovieCardLoader = () => {
         <>
             {loderItems.map(item => (
                 <ContentLoader
+                    key={item}
                     speed={1}
                     width={258}
                     height={322}

@@ -13,7 +13,7 @@ const Movies = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [activePage, setActivePage] = useState(0);
   const [genre, setGenre] = useState<Genre>();
-
+ 
   const getMovies = useCallback(() => {
     const params = {
       genreId: genre?.id,
@@ -48,12 +48,12 @@ const Movies = () => {
         {isLoading ? (
         <MovieCardLoader />
         ) : (
-          moviesResponse?.content.map((movie) => (
+          moviesResponse?.content.map((movie => (
             <Link to={`/movies/${movie.id}`} key={movie.id}>
               <MovieCard movie={movie} />
             </Link>
           ))
-        )}
+        ))}
       </div>
       {moviesResponse && (
         <Pagination
