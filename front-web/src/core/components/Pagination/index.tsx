@@ -1,4 +1,3 @@
-import React from "react";
 import { ReactComponent as ArrowIcon } from "core/assets/images/Seta.svg"
 import './styles.scss';
 import { generateList } from "core/utils/list";

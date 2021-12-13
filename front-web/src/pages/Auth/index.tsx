@@ -1,8 +1,6 @@
-import React from "react";
 import { ReactComponent as AuthImage} from 'core/assets/images/auth.svg';
-import './styles.scss';
 import Login from "./components/Login";
-
+import './styles.scss';
 
 
 const Auth = () => (

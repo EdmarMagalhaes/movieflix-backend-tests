@@ -1,5 +1,4 @@
 import { makeLogin } from "core/utils/request";
-import React from "react";
 import {toast } from "react-toastify";
 import { useForm } from "react-hook-form";
 import AuthCard from "../Card";

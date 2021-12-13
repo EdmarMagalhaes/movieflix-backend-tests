@@ -1,4 +1,3 @@
-import React from "react";
 import { ReactComponent as ReviewImage } from "core/assets/images/estrela.svg"
 import './styles.scss';
 

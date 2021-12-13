@@ -1,4 +1,3 @@
-import React from "react";
 import MovieDescription from "../MovieDescription";
 import './styles.scss';
 import { Movie } from "core/types/Movie";

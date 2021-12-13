@@ -1,12 +1,12 @@
-import React, { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import MovieCard from "./components/MovieCard";
 import { makePrivateRequest } from "core/utils/request";
 import { Genre, MoviesResponse } from "core/types/Movie";
 import MovieCardLoader from "./components/Loaders/MovieCardLoader";
 import Pagination from "core/components/Pagination";
-import './styles.scss';
 import MovieFilters from "core/components/MovieFilters";
+import './styles.scss';
 
 const Movies = () => {
   const [moviesResponse, setMoviesResponse] = useState<MoviesResponse>();
