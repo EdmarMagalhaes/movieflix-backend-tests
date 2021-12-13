@@ -19,7 +19,7 @@ const Auth = () => (
         </div>
         <div className="auth-content">
             <Login />
-            {localStorage.removeItem('authData')};
+            {localStorage.removeItem('authData')}
         </div>
     </div>
 
