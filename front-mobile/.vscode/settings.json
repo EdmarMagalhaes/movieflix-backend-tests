@@ -1,7 +1,12 @@
 {
     "cSpell.words": [
         "buttoncontainer",
+        "logincontainer",
+        "moviecardcontainer",
         "textbutton",
-        "textcontainer"
+        "textcontainer",
+        "textcotainer",
+        "textinput",
+        "textlogin"
     ]
 }

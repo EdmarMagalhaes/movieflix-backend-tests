@@ -1,13 +1,14 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import {Text, View } from 'react-native';
+import MovieCard from '../../core/components/MovieCard';
 
- function Login() {
+ const Movies: React.FC = () => {
   return (
     <View >
-        <Text>Catalogo de filmes</Text>
+       <MovieCard />
     </View>
      
    
   );
 }
-export default Login;
+export default Movies;

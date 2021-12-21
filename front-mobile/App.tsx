@@ -1,34 +1,29 @@
+import 'react-native-gesture-handler';
+import React from 'react';
 import { useFonts, OpenSans_700Bold, OpenSans_400Regular } from '@expo-google-fonts/open-sans';
 import AppLoading from 'expo-app-loading';
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import Header from './src/core/components/Header';
-import Login from './src/Pages/Login';
+import Routes from './src/Routes';
+import { NavigationContainer } from '@react-navigation/native';
 
-export default function App() {
+const App: React.FC = () => {
   let [fontsLoaded] = useFonts({
-    OpenSans_700Bold, 
-    OpenSans_400Regular
+    OpenSans_400Regular,
+    OpenSans_700Bold
   });
 
   if (!fontsLoaded) {
     return <AppLoading />;
-  } 
+  }
   
   return (
-    <View style={styles.container}>
-     <Header />
-     <Login />
-      <StatusBar style="auto" />
-    </View>
+    
+    <NavigationContainer>
+      <Routes />
+    </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-  flex: 1,
-  backgroundColor: '#525252',
-    
-  },
-});
+export default App;
+
+ 
+
