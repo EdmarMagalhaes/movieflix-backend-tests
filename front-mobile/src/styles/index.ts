@@ -10,7 +10,7 @@ const colors = {
     Black: "#000000",
 };
 
-const font = {
+export const font = {
     regular: "OpenSans_400Regular",
     bold: "OpenSans_700Bold",
 
@@ -26,6 +26,16 @@ const theme = StyleSheet.create({
         height: "100%",
     },
 
+    filtercontainer:{
+        marginTop: 20,
+        marginBottom: 10,
+        width: 380,
+        height: 70,
+        borderRadius: 4,
+        backgroundColor: colors.mediumGray,
+        justifyContent: "center",
+        alignItems: "center",
+    },
     
     })
 
@@ -106,6 +116,9 @@ const logincontainer = StyleSheet.create({
             fontFamily: font.bold,
 
         },
+        activityindicator: {
+            marginTop: 20,
+        }
        
     })         
       
@@ -149,7 +162,6 @@ const navbar = StyleSheet.create({
             alignItems: 'center',
         },
         textbutton: {
-            fontWeight: 'bold',
             fontSize: 14,
             lineHeight: 19,
             letterSpacing: -0.24,
@@ -159,13 +171,79 @@ const navbar = StyleSheet.create({
 
 })
 
-const moviecardcontainer = StyleSheet.create({
-    card:{
-        width: 300,
-        height: 322,
+const moviecardcontainer = StyleSheet.create({   
+    card: {
+        width: 380,
+        height: 380,
         backgroundColor: colors.mediumGray,
+        borderRadius: 4,
+        marginVertical: 10,
+    },
+
+    imagecontainer: {
+        paddingTop: 30,
+    },
+    
+    Image: {
+        width: 380,
+        height: 200,
+    },
+
+    textcontainer: {
+        paddingTop: 12,
+        paddingLeft: 16,
+    },
+    
+    title: {
+        fontSize: 20,
+        lineHeight: 27,
+        letterSpacing: -0.24,
+        color: "#FFFFFF",
+        fontFamily: font.bold,
+    },
+
+    year: {
+        fontSize: 16,
+        lineHeight: 22,
+        letterSpacing: -0.24,
+        color: "#FFC700",
+        fontFamily: font.bold,
+    },
+
+    subtitle: {
+        fontSize: 14,
+        lineHeight: 19,
+        letterSpacing: -0.24,
+        color: "#FFFFFF",
+        fontFamily: font.regular,
+    },
+    
+})
+
+const moviefilter = StyleSheet.create({
+    card: {
+       width:340,
+       height: 60,
+       backgroundColor: colors.mediumGray,
+       alignItems: "center",
+       justifyContent: "center",
+       borderWidth: 1,
+       borderColor: colors.White,
+       borderRadius: 4, 
+    },
+
+    picker: {
+        width:320,
+        color: colors.White,
+        
+    },
+    
+    pickeritens: {
+        backgroundColor: colors.mediumGray,
+        color: colors.White,
+        
     },
 
 })
 
-export { colors, theme, navbar, logincontainer, moviecardcontainer};
+export { colors, theme, navbar, logincontainer, moviecardcontainer, moviefilter};

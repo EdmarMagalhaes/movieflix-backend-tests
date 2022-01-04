@@ -1,4 +1,4 @@
-import { api, TOKEN } from "./index";
+import { api, TOKEN } from "./request";
 import queryString from "query-string";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
@@ -47,3 +47,8 @@ export async function doLogout() {
         console.warn(e);
      }
  }
+
+ export async function userToken() {
+  const token = await AsyncStorage.getItem("@token");
+  return token;
+}

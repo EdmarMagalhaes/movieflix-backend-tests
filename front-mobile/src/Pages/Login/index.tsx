@@ -1,34 +1,35 @@
 import React, { useState, useEffect } from 'react';
-import { Text, View, TouchableOpacity, TextInput, Image } from 'react-native';
+import { Text, View, TouchableOpacity, TextInput, Image, ActivityIndicator } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import eyesOpened from '../../assets/eyes-opened.png';
 import eyesClosed from '../../assets/eyes-closed.png';
 import { logincontainer, theme } from '../../styles';
-import { isAuthenticated, login } from '../../core/utils/auth';
-
-
-
+import { doLogout, isAuthenticated, login } from '../../core/utils/auth';
 
 
 const Login: React.FC = () => {
   const navigation = useNavigation();
   const [hidePassword, setHidePassword] = useState(true);
   const [useFetchData, setUseFetchData] = useState({});
+  const [loading, setLoading] = useState(false);
   const [userInfo, setUserInfo] = useState({ username: "", password: "" });
-  
+
   useEffect(() => {
 
     isAuthenticated();
-
+    doLogout();
   }, []);
 
   async function handleLogin() {
+    setLoading(true);
     const data = await login(userInfo);
     setUseFetchData(data);
     navigation.navigate("Movies");
+    setLoading(false);
   }
 
   return (
+
     <View style={theme.container}>
       <View style={logincontainer.card}>
         <Text style={logincontainer.title}>login</Text>
@@ -65,20 +66,28 @@ const Login: React.FC = () => {
               <Image
                 source={hidePassword ? eyesClosed : eyesOpened}
                 style={logincontainer.eyes}
-                 
+
               />
             </TouchableOpacity>
           </View>
         </View>
-          <TouchableOpacity
-            style={logincontainer.button}
-            onPress={() => handleLogin()}
-          >
-            <Text style={logincontainer.textbutton}>fazer login</Text>
-          </TouchableOpacity>
-        </View>
+        <TouchableOpacity
+          style={logincontainer.button}
+          onPress={() => handleLogin()}
+        >
+          <Text style={logincontainer.textbutton}>fazer login</Text>
+        </TouchableOpacity>
+        {loading && (
+          <>
+          <View style={logincontainer.activityindicator}>
+          <ActivityIndicator size="large" color="#E1E1E1" />
+          </View>
+          </>
+        )
+        }
       </View>
-   
+    </View>
+
 
 
   );
