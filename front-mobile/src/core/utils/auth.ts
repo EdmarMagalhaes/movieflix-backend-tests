@@ -2,10 +2,14 @@ import { api, TOKEN } from "./request";
 import queryString from "query-string";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
+
+
 interface AuthProps {
   username: string;
   password: string;
 }
+
+
 
 export async function login(userInfo: AuthProps) {
   const data = queryString.stringify({ ...userInfo, grant_type: "password" });
@@ -21,6 +25,7 @@ export async function login(userInfo: AuthProps) {
   setAsyncKeys("@token", access_token);
   return result;
 }
+
 
 async function setAsyncKeys(key: string, value: string) {
   try {
@@ -48,7 +53,4 @@ export async function doLogout() {
      }
  }
 
- export async function userToken() {
-  const token = await AsyncStorage.getItem("@token");
-  return token;
-}
+ 

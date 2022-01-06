@@ -1,5 +1,3 @@
-import { ImageSourcePropType } from "react-native"
-
 export type MoviesResponse = {
     content: Movie[];
     totalPages: number;

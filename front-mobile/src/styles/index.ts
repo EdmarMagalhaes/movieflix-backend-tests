@@ -246,4 +246,10 @@ const moviefilter = StyleSheet.create({
 
 })
 
-export { colors, theme, navbar, logincontainer, moviecardcontainer, moviefilter};
+const pagination = StyleSheet.create({
+    container: {
+
+    }
+})
+
+export { colors, theme, navbar, logincontainer, moviecardcontainer, moviefilter, pagination};
