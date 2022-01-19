@@ -1,17 +1,19 @@
 import React from "react";
 import { View, Text, Image, TouchableOpacity, ImageSourcePropType } from "react-native";
-import { moviecardcontainer, theme } from "../../../styles";
-import { Movie } from "../../types/Movies";
+import { useNavigation } from "@react-navigation/native";
+import { moviecardcontainer } from "../../../styles";
+import { Movie } from "../../types/Movie";
 
-interface Props {
+type Props = {
     movie: Movie;
 }
 
 
 const MovieCard  = ({ movie } : Props) => {
+    const navigation =  useNavigation();
+    
     return (
-
-        <TouchableOpacity style={moviecardcontainer.card}>
+        <TouchableOpacity style={moviecardcontainer.card} onPress={() => navigation.navigate('MovieDetails', { ...movie })}>
             <View style={moviecardcontainer.imagecontainer}>
                 <Image source={{ uri: movie.imgUri }} style={moviecardcontainer.Image} />
             </View>

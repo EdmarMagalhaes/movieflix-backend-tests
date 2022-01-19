@@ -45,7 +45,6 @@ const logincontainer = StyleSheet.create({
         width: "93%",
         height: "90%",
         alignItems: "center",
-        
         borderRadius: 4,
         backgroundColor: colors.mediumGray,
         
@@ -220,6 +219,60 @@ const moviecardcontainer = StyleSheet.create({
     
 })
 
+const moviecarddescription = StyleSheet.create({
+    card: {
+        marginTop: 20,
+        paddingTop: 20,
+        width: 380,
+        height: 695,
+        backgroundColor: colors.mediumGray,
+        borderRadius: 10,
+        alignItems: "center",
+        
+    },    
+    
+    imagecontainer: {
+       alignItems: "center",
+       paddingBottom: 20,
+       
+    },
+
+    textcontainer: {
+        paddingLeft: 20,
+    },
+
+    image : {
+        width: 342,
+        height: 175,
+
+    },
+
+    synopsis: {
+        marginTop: 16,
+        marginLeft: 4,
+        marginRight: 20,
+        alignItems: "center",
+        justifyContent: "center",
+        borderWidth: 1,
+        borderColor: colors.White,
+        borderRadius: 10, 
+    
+    },
+
+    synopsistext: {
+        fontSize: 16,
+        lineHeight: 22,
+        letterSpacing: -0.24,
+        color: "#9E9E9E",
+        fontFamily: font.regular,
+        textAlign:"justify",
+        marginHorizontal: 8,
+        marginVertical: 10,
+       
+    },
+    
+})
+
 const moviefilter = StyleSheet.create({
     card: {
        width:340,
@@ -234,8 +287,7 @@ const moviefilter = StyleSheet.create({
 
     picker: {
         width:320,
-        color: colors.White,
-        
+        color: colors.White,  
     },
     
     pickeritens: {
@@ -252,4 +304,59 @@ const pagination = StyleSheet.create({
     }
 })
 
-export { colors, theme, navbar, logincontainer, moviecardcontainer, moviefilter, pagination};
+const formreview = StyleSheet.create({
+    card: {
+       width:380,
+       height: 160,
+       backgroundColor: colors.mediumGray,
+       alignItems: "center",
+       borderRadius: 4,
+       marginTop: 25, 
+    },
+
+    textinput: {
+        padding: 10,
+        width: 360,
+        height: 50,
+        borderRadius: 4,
+        borderWidth: 1,
+        borderColor: colors.lightGray,
+        backgroundColor: colors.White,
+        marginTop: 20,
+        
+    },
+
+    button: {
+        width: 360,
+        height: 50,
+        backgroundColor: colors.Yellow,
+        justifyContent: "center",
+        alignItems: "center",
+        borderRadius: 4,
+        marginTop: 17,
+    },
+
+    textbutton: {
+        fontWeight: "bold",
+        fontSize: 16,
+        lineHeight: 22,      
+        letterSpacing: -0.24,
+        color: colors.Black,
+        textTransform: "uppercase",
+        fontFamily: font.bold,
+    },
+})
+    const cardreview = StyleSheet.create({
+        card:{
+            width:380,
+            height: 655,
+            backgroundColor: colors.mediumGray,
+            alignItems: "center",
+            borderRadius: 4,
+            marginTop: 25,
+            marginBottom: 25,  
+        }
+})
+
+
+export { colors, theme, navbar, logincontainer, moviecardcontainer, moviefilter, pagination, moviecarddescription, formreview, cardreview};

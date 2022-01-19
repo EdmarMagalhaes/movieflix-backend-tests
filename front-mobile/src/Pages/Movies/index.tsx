@@ -3,8 +3,7 @@ import { ScrollView, View, ActivityIndicator, EdgeInsetsPropType } from 'react-n
 import MovieCard from '../../core/components/MovieCard';
 import { theme } from '../../styles';
 import MovieFilter from '../../core/components/MovieFilters';
-import imageCard from '../../assets/cardimage.png';
-import { Genre, Movie, MoviesResponse } from '../../core/types/Movies';
+import { Genre, MoviesResponse } from '../../core/types/Movie';
 import { makePrivateRequest } from '../../core/utils/request';
 
 
@@ -27,10 +26,10 @@ const Movies = () => {
         .finally(() => {
           setLoading(false);
         })  
-    console.warn(moviesResponse)
+    
     }, [activePage, genre]);
 
-     useEffect(() => {
+    useEffect(() => {
       getMovies();
     }, [getMovies]);
   
@@ -40,9 +39,7 @@ const Movies = () => {
     setGenre(genre);
   }
 
- console.warn(genre);
-
-
+ 
   return (
     <>
 
