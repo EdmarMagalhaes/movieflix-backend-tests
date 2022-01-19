@@ -8,6 +8,7 @@ const colors = {
     lightGray: "#E1E1E1",
     White: "#FFFFFF",
     Black: "#000000",
+    Blue: "#407BFF",
 };
 
 export const font = {
@@ -29,7 +30,7 @@ const theme = StyleSheet.create({
     filtercontainer:{
         marginTop: 20,
         marginBottom: 10,
-        width: 380,
+        width: "92%",
         height: 70,
         borderRadius: 4,
         backgroundColor: colors.mediumGray,
@@ -172,15 +173,15 @@ const navbar = StyleSheet.create({
 
 const moviecardcontainer = StyleSheet.create({   
     card: {
-        width: 380,
-        height: 380,
+        width: "100%",
+        paddingVertical: 25,
         backgroundColor: colors.mediumGray,
         borderRadius: 4,
         marginVertical: 10,
     },
 
     imagecontainer: {
-        paddingTop: 30,
+        width: "100%",
     },
     
     Image: {
@@ -222,40 +223,41 @@ const moviecardcontainer = StyleSheet.create({
 const moviecarddescription = StyleSheet.create({
     card: {
         marginTop: 20,
-        paddingTop: 20,
-        width: 380,
-        height: 695,
+        marginHorizontal: 20,
+        padding: 20,
+        width: "92%",
+       
         backgroundColor: colors.mediumGray,
         borderRadius: 10,
-        alignItems: "center",
-        
+   
     },    
     
     imagecontainer: {
        alignItems: "center",
-       paddingBottom: 20,
+       padding: 20,
        
     },
 
     textcontainer: {
-        paddingLeft: 20,
+        marginBottom: 16,
+        alignItems: "flex-start"
+        
     },
 
     image : {
-        width: 342,
+        width: 340,
         height: 175,
 
     },
 
     synopsis: {
-        marginTop: 16,
-        marginLeft: 4,
-        marginRight: 20,
         alignItems: "center",
         justifyContent: "center",
         borderWidth: 1,
         borderColor: colors.White,
-        borderRadius: 10, 
+        borderRadius: 10,
+        
+        
     
     },
 
@@ -275,7 +277,7 @@ const moviecarddescription = StyleSheet.create({
 
 const moviefilter = StyleSheet.create({
     card: {
-       width:340,
+       width: "92%",
        height: 60,
        backgroundColor: colors.mediumGray,
        alignItems: "center",
@@ -306,7 +308,7 @@ const pagination = StyleSheet.create({
 
 const formreview = StyleSheet.create({
     card: {
-       width:380,
+       width: "92%",
        height: 160,
        backgroundColor: colors.mediumGray,
        alignItems: "center",
@@ -348,15 +350,83 @@ const formreview = StyleSheet.create({
 })
     const cardreview = StyleSheet.create({
         card:{
-            width:380,
-            height: 655,
+            width: "92%",
             backgroundColor: colors.mediumGray,
-            alignItems: "center",
             borderRadius: 4,
             marginTop: 25,
-            marginBottom: 25,  
+            marginBottom: 25, 
+            paddingHorizontal: 10,
+            paddingVertical: 20, 
+        },
+
+        name:{
+            flexDirection: "row",
+            marginLeft: 5,
+            alignItems: "center",
+        },
+
+        textname: {
+            color: colors.White,
+            fontFamily: font.bold,
+            fontSize: 16,
+            lineHeight: 22,
+            letterSpacing: -0.24,
+            marginLeft: 16,
+        },
+
+        reviewcontainer: {
+            backgroundColor: colors.mediumGray,
+            alignItems: "center",
+            justifyContent: "center",
+            borderWidth: 1,
+            borderColor: colors.White,
+            borderRadius: 4,
+            marginTop: 10, 
+        },
+
+        textreview: {
+            fontSize: 16,
+            lineHeight: 22,
+            letterSpacing: -0.24,
+            color: "#9E9E9E",
+            fontFamily: font.regular,
+            textAlign:"justify",
+            marginHorizontal: 8,
+            marginVertical: 10,
+
+        }
+})
+    
+    const buttonback = StyleSheet.create ({
+        container: {
+            
+            flexDirection: "row",
+            
+        },
+
+        button: {
+            flexDirection: "row",
+            alignItems: "center",
+        },
+
+        image: {
+            color: colors.Blue,
+            width: 15,
+            height: 15,
+            
+        },
+
+        text: {
+            color: colors.White,
+           
+
         }
 })
 
 
-export { colors, theme, navbar, logincontainer, moviecardcontainer, moviefilter, pagination, moviecarddescription, formreview, cardreview};
+
+export { colors, theme, navbar, 
+        logincontainer, moviecardcontainer, 
+        moviefilter, pagination, 
+        moviecarddescription, formreview, 
+        cardreview, buttonback};

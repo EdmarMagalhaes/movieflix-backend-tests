@@ -59,7 +59,7 @@ const Movies = () => {
           ) :
             moviesResponse?.content.map(movie => (
            
-              <MovieCard movie={movie} key={movie.id} />
+              <MovieCard movie={movie} id={movie.id} key={movie.id} />
 
             ))
           }

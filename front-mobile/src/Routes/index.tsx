@@ -6,7 +6,13 @@ import MovieDetails from "../Pages/Movies/MovieDetails";
 import { View } from "react-native";
 import NavBar from "../core/components/NavBar";
 
-const Stack = createStackNavigator();
+export type StackParam = {
+        Login: undefined;
+        Movies: undefined;
+        MovieDetails: { id: Number}
+}
+
+const Stack = createStackNavigator<StackParam>();
 
 const Routes: React.FC = ()  => {
  return (
@@ -24,5 +30,4 @@ const Routes: React.FC = ()  => {
     
  )
 }
-
 export default Routes;
