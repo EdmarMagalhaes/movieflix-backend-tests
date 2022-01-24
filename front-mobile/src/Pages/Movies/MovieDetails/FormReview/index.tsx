@@ -1,35 +1,41 @@
-import React from "react";
-import { Text, TouchableOpacity, View } from "react-native";
+import React, { useState } from "react";
+import { Alert, Text, TouchableOpacity, View } from "react-native";
 import { TextInput } from "react-native-gesture-handler";
-import { formreview } from "../../../../styles"
+import { makePrivateRequest } from "../../../../core/utils/request";
+import { formreview } from "../../../../styles";
+
 
 type Props = {
+    button?: boolean;
     value?: boolean;
     placeholder?: string;
-    ValueMovieId?: number  
+    ValueMovieId?: number;
+    
+    
 }
 
-const FormReview = ({ value, placeholder, ValueMovieId}: Props) => {
+const FormReview = ({ value, placeholder, ValueMovieId, button}: Props) => {
+  const [ addReview, setAddReview ] = useState({
+    text: ""
+});
   
     
-    return(
+  
+  return (
         <View style={formreview.card}>
             <TextInput
             placeholder={placeholder}
             autoCapitalize='none'
             keyboardType='default'
+            value={addReview.text}
             style={formreview.textinput}
             editable={value}
-            //value={userInfo.username}
-            // onChangeText={(e) => {
-            //   const newUserInfo = { ...userInfo };
-            //   newUserInfo.username = e;
-            //   setUserInfo(newUserInfo);
-            // }}
+            onChangeText={(event) => setAddReview({ ...addReview, text: event})}
           />
           <TouchableOpacity
           style={formreview.button}
-          //onPress={() => handleLogin()}
+          disabled={button}
+          //onPress={() => onSubmit()}
         >
           <Text style={formreview.textbutton}>salvar avaliação</Text>
         </TouchableOpacity>

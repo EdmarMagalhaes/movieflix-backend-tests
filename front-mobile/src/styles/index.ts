@@ -37,6 +37,11 @@ const theme = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
     },
+
+    moviedtailscontainer: {
+        flex: 1,
+        backgroundColor: colors.Gray,
+    }
     
     })
 
@@ -381,7 +386,8 @@ const formreview = StyleSheet.create({
             borderWidth: 1,
             borderColor: colors.White,
             borderRadius: 4,
-            marginTop: 10, 
+            marginTop: 10,
+            marginBottom: 15, 
         },
 
         textreview: {
@@ -393,7 +399,15 @@ const formreview = StyleSheet.create({
             textAlign:"justify",
             marginHorizontal: 8,
             marginVertical: 10,
+           
+        },
 
+        noreview:{
+            color: colors.White,
+            fontFamily: font.bold,
+            fontSize: 16,
+            lineHeight: 22,
+            letterSpacing: -0.24,
         }
 })
     

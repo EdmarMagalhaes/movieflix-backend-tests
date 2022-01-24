@@ -44,11 +44,12 @@ export const TOKEN = "Basic bW92aWVmbGl4Om1vdmllZmxpeDEyMw==";
       const token = await userToken();
       const headers = {
               'Authorization': `Bearer ${token}`
-          }
-          console.log(token)
+          }          
       return makeRequest({ method, url, data, params, headers }); 
         
     }
+
+    
 
 //  export async function getMovies() {
 //      const token = await userToken();
