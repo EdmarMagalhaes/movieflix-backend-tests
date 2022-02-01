@@ -154,9 +154,9 @@ const MovieDetails = ({ route: { params: { id } } }: MovieId) => {
                                 <CardReview name={review.user.name} text={review.text} key={review.id} />
                             ))
                         ) : (
-                            isLoading ? <ActivityIndicator size="large" color="#E1E1E1" /> :
+                            isLoading ? <ActivityIndicator size="large" color="#E1E1E1" / > :
                                 <>
-                                    <Text style={cardreview.noreview}>Sejá o primeiro a avaliar!</Text>
+                                    <Text style={cardreview.noreview}>Seja o primeiro a avaliar!</Text>
                                 </>
                         )
                         }

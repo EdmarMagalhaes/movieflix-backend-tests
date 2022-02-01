@@ -5,7 +5,7 @@ import eyesOpened from '../../assets/eyes-opened.png';
 import eyesClosed from '../../assets/eyes-closed.png';
 import { logincontainer, theme } from '../../styles';
 import { doLogout, isAuthenticated, login } from '../../core/utils/auth';
-
+import Toast from 'react-native-tiny-toast';
 
 const Login: React.FC = () => {
   const navigation = useNavigation();
@@ -21,13 +21,26 @@ const Login: React.FC = () => {
   }, []);
 
   async function handleLogin() {
-    setLoading(true);
-    const data = await login(userInfo);
-    setUseFetchData(data);
-    navigation.navigate("Movies");
-    setLoading(false);
-  }
-
+    setLoading(true)
+    await login(userInfo)
+        .then(() => navigation.navigate("Movies"))
+        .catch(() => Toast.show("Email ou Senha invalidos...", {
+            containerStyle:{
+                backgroundColor: '#407BFF',
+                borderRadius: 15,
+               },
+               textStyle:{
+                color:'#fff',
+                fontWeight: "bold"
+               },
+               imgStyle:{},
+               mask:false,
+               maskStyle:{},
+               duration: 3000,
+               animation: true,   
+        }))
+        .finally(() => setLoading(false))
+}
   return (
 
     <View style={theme.container}>

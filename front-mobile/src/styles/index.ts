@@ -25,17 +25,19 @@ const theme = StyleSheet.create({
         backgroundColor: colors.Gray,
         width: "100%",
         height: "100%",
+        
     },
 
     filtercontainer:{
         marginTop: 20,
         marginBottom: 10,
-        width: "92%",
+        width: 380,
         height: 70,
         borderRadius: 4,
         backgroundColor: colors.mediumGray,
         justifyContent: "center",
         alignItems: "center",
+        flex:1,
     },
 
     moviedtailscontainer: {
@@ -290,10 +292,11 @@ const moviefilter = StyleSheet.create({
        borderWidth: 1,
        borderColor: colors.White,
        borderRadius: 4, 
+       
     },
 
     picker: {
-        width:320,
+        width: 320,
         color: colors.White,  
     },
     
@@ -307,10 +310,46 @@ const moviefilter = StyleSheet.create({
 
 const pagination = StyleSheet.create({
     container: {
+        flex:1,
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent:"center",
+       
 
-    }
+    },
+    previousbutton:{
+        marginRight: 12,
+        marginVertical: 34,
+        
+    },
+
+    previousimage: {
+        width: 11,
+        height: 27,
+    },
+
+    iten:{
+        width: 40,
+        height: 40,
+        backgroundColor: colors.mediumGray,
+        borderRadius: 50,
+        alignItems: "center",
+        justifyContent: "center",
+        marginRight: 10,      
+    },
+
+    textiten: {
+        fontSize: 18,
+        lineHeight: 25,
+        letterSpacing: -0.24,
+        color: colors.White,
+        fontFamily: font.bold,
+        
+
+    },
+
+
 })
-
 const formreview = StyleSheet.create({
     card: {
        width: "92%",
@@ -424,7 +463,7 @@ const formreview = StyleSheet.create({
         },
 
         image: {
-            color: colors.Blue,
+           
             width: 15,
             height: 15,
             

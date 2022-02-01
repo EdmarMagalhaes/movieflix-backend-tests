@@ -13,19 +13,18 @@ type Props = {
 
 
 const MovieFilter = ({ genre, handleChangeGenre }: Props) => {
-  const [isLoadingGenre, setIsLoadingGenre] = useState(false);
-  const [genres, setGenres] = useState<Genre[]>([]);
+   const [genres, setGenres] = useState<Genre[]>([]);
 
   useEffect(() => {
-    setIsLoadingGenre(true);
+   
     makePrivateRequest({ url: '/genres' })
       .then(response => setGenres(response.data))
-      .finally(() => setIsLoadingGenre(false));
+      
   }, []);
 
   const renderGenreList = () => {
-    return genres.map(genre => {
-      return <Picker.Item label={genre.name} value={genre.id} fontFamily={font.regular} style={moviefilter.pickeritens} key={genre.id} />
+        return genres.map(genre => {
+          return <Picker.Item label={genre.name} value={genre.id} fontFamily={font.regular} style={moviefilter.pickeritens} key={genre.id} />
     })
 
   }
@@ -33,8 +32,9 @@ const MovieFilter = ({ genre, handleChangeGenre }: Props) => {
     <View style={moviefilter.card}>
       <Picker
         style={moviefilter.picker}
+        
         selectedValue={genre}
-        onValueChange={itemValue => handleChangeGenre(itemValue as Genre)}
+        onValueChange={itemValue => handleChangeGenre(itemValue)}
         mode={'dropdown'}
         dropdownIconColor={"white"}
 
